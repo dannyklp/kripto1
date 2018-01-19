@@ -1,6 +1,3 @@
-//Program for RSA asymmetric cryptographic algorithm
-//for demonstration values are relatively small compared to practical application
-
 #include<iostream>
 #include<math.h>
 
