@@ -1,4 +1,3 @@
-
 #include<stdio.h>
 #include<math.h>
 #include <string>
@@ -54,20 +53,20 @@ int main()
     printf("Secret key for the Alice is : %lld\n", ka);
     printf("Secret Key for the Bob is : %lld\n", kb);
 
-	cout << "Àííà: ";
+	cout << "ÐÐ½Ð½Ð°: ";
 	string mes;
 	getline(cin, mes);
 	string encrypted = magic(mes, ka);
-	cout << endl << "Çàøèôðîâàííî: " << encrypted << endl;
+	cout << endl << "Ð—Ð°ÑˆÐ¸Ñ„Ñ€Ð¾Ð²Ð°Ð½Ð¾: " << encrypted << endl;
 	string dec = magic(encrypted, kb);
-	cout << "Ðàñøèôðîâàííî: " << dec << endl;
+	cout << "Ð Ð°ÑÑˆÐ¸Ñ„Ñ€Ð¾Ð²Ð°Ð½Ð¾: " << dec << endl;
 
-	cout << "Áîá: ";
+	cout << "Ð‘Ð¾Ð±: ";
 	getline(cin, mes);
 	encrypted = magic(mes, ka);
-	cout << endl << "Çàøèôðîâàííî: " << encrypted << endl;
+	cout << endl << "Ã‡Ã Ã¸Ã¨Ã´Ã°Ã®Ã¢Ã Ã­Ã­Ã®: " << encrypted << endl;
 	dec = magic(encrypted, kb);
-	cout << "Ðàñøèôðîâàííî: " << dec << endl;
+	cout << "ÃÃ Ã±Ã¸Ã¨Ã´Ã°Ã®Ã¢Ã Ã­Ã­Ã®: " << dec << endl;
 
 	system("pause");
     return 0;
