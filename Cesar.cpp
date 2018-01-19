@@ -17,11 +17,11 @@ public :
 	 return ' ' ;
       else {
 			static std::string letters( "abcdefghijklmnopqrstuvwxyz" ) ;
-			std::string::size_type found = letters.find(tolower( c )) ;
+		std::string::size_type found = letters.find(tolower( c )) ;
 			int shiftedpos = ( static_cast<int>( found ) + shift ) % 26 ;
-			if ( shiftedpos < 0 )
+		if ( shiftedpos < 0 )
 			shiftedpos = 26 + shiftedpos ;
-			char shifted = letters[shiftedpos] ;
+	char shifted = letters[shiftedpos] ;
 			return shifted ;
       }
   }
@@ -31,12 +31,12 @@ int main( ) {
 
 	setlocale(0, "Rus");
    std::string input ;
-   std::cout << "ââåäèòå ïóòü ê ôàéëó: " ;
+   std::cout << "Ð²Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¿ÑƒÑ‚ÑŒ Ðº Ñ„Ð°Ð¹Ð»Ñƒ: " ;
    getline( std::cin , input ) ;
    ifstream file;
    file.open(input, ios::in);
    if (!file.is_open()) {
-	   cout << "ôàéë íå íàéäåí";
+	   cout << "Ñ„Ð°Ð¹Ð» Ð½Ðµ Ð½Ð°Ð¹Ð´ÐµÐ½";
 	   system("pause");
 	   return -1;
    }
@@ -47,18 +47,19 @@ int main( ) {
    }
    file.close();
 
-   std::cout << "ââåäèòå ñäâèã: " ;
+   std::cout << "Ð²Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÐ´Ð²Ð¸Ð³: " ;
    int myshift = 0 ;
    std::cin >> myshift ;
-   std::cout << "èñòî÷íèê:" << source << std::endl ;
+   std::cout << "Ð¸ÑÑ‚Ð¾Ñ‡Ð½Ð¸Ðº:" << source << std::endl ;
    std::transform (source.begin( ) , source.end( ) , source.begin( ) ,
 	 MyTransform( myshift ) ) ;
-   std::cout << "çàøèôðîâàíî: " ;
+	
+   std::cout << "Ð·Ð°ÑˆÐ¸Ñ„Ñ€Ð¾Ð²Ð°Ð½Ð¾: " ;
    std::cout << source << std::endl ;
    myshift *= -1 ; 
    std::transform (source.begin( ) , source.end( ) , source.begin( ) ,
 	 MyTransform( myshift ) ) ;
-   std::cout << "ðàñøèôðîâàíî: " ;
+   std::cout << "Ñ€Ð°ÑÑˆÐ¸Ñ„Ñ€Ð¾Ð²Ð°Ð½Ð¾: " ;
    std::cout << source << std::endl ;
    system("pause");
    return 0 ;
