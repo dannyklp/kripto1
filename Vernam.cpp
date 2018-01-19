@@ -47,7 +47,7 @@ class vernam
                      char c;
                      for(i=0;i<s.size();i++)
                      {
-							c = enc[i];//%74 + 48;
+			c = enc[i];//%74 + 48;
                            cout<<c;
                      }
                      cout<<endl;
@@ -68,12 +68,12 @@ int main()
 {
 	setlocale(0, "Rus");
 	string s,k;
-	   cout << "Ââåäèòå ïóòü ê ôàéëó: ";
+	   cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¿ÑƒÑ‚ÑŒ Ðº Ñ„Ð°Ð¹Ð»Ñƒ: ";
 	   getline(cin, s);
 	   ifstream file;
 	   file.open(s, ios::in);
 	   if (!file.is_open()) {
-		   cout << "ôàéë íå íàéäåí";
+		   cout << "Ñ„Ð°Ð¹Ð» Ð½Ðµ Ð½Ð°Ð¹Ð´ÐµÐ½";
 		   system("pause");
 		   return -1;
 	   }
@@ -84,18 +84,18 @@ int main()
 	   }
 	   file.close();
 
-       cout<<"Ââåäèòå êëþ÷: "<<endl;
+       cout<<"Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ»ÑŽÑ‡: "<<endl;
        getline(cin,k);
 
        vernam v(source,k);
 
        v.encrypt();
-       cout<<"Çàøèôðîâàííîå: ";
+       cout<<"Ð—Ð°ÑˆÐ¸Ñ„Ñ€Ð¾Ð²Ð°Ð½Ð½Ð¾Ðµ: ";
        v.printenc();
        cout << endl;
 
        v.decrypt();
-       cout<<"Ðàñøèôðîâàííîå: ";
+       cout<<"Ð Ð°ÑÑˆÐ¸Ñ„Ñ€Ð¾Ð²Ð°Ð½Ð½Ð¾Ðµ: ";
        v.printdec();
 
 	   system("pause");
