@@ -6,7 +6,7 @@
 
 using namespace std;
 
-//to find gcd
+// gcd
 int gcd(int a, int h)
 {
 	int temp;
@@ -23,18 +23,18 @@ int gcd(int a, int h)
 int main()
 {
 	setlocale(0, "Rus");
-	//2 random prime numbers
+	
 	double p = 3;
 	double q = 7;
 	double n = p*q;
 	double count;
 	double totient = (p - 1)*(q - 1);
 
-	//public key
-	//e stands for encrypt
+	//закрытый ключ
+	//e для шифра
 	double e = 2;
 
-	//for checking co-prime which satisfies e>1
+	//проверка 
 	while (e<totient) {
 		count = gcd(e, totient);
 		if (count == 1)
@@ -43,14 +43,14 @@ int main()
 			e++;
 	}
 
-	//private key
-	//d stands for decrypt
+	//закрытый key
+	//d для дешфировки
 	double d;
 
-	//k can be any arbitrary value
+	//k любое
 	double k = 2;
 
-	//choosing d such that it satisfies d*e = 1 + k * totient
+	// d*e = 1 + k * totient
 	d = (1 + (k*totient)) / e;
 	cout << "Введите сообщение(число): ";
 	double msg;
