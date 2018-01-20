@@ -31,18 +31,18 @@ int main()
     long long int P, G, x, a, y, b, ka, kb;
 
     P = 23; 
-    printf("The value of P : %lld\n", P);
+    printf("Значение P: ", P);
 
     G = 9;
-    printf("The value of G : %lld\n\n", G);
+    printf("Значение G: ", G);
 
    
     a = 4;
-    printf("The private key a for Alice : %lld\n", a);
+    printf("Закрытый ключ для Алисы: ", a);
     x = power(G, a, P); 
 
     b = 3; 
-    printf("The private key b for Bob : %lld\n\n", b);
+    printf("Закрытый ключ для Боба: ", b);
     y = power(G, b, P); 
 
     
@@ -50,8 +50,8 @@ int main()
     ka = power(y, a, P); 
     kb = power(x, b, P); 
 
-    printf("Secret key for the Alice is : %lld\n", ka);
-    printf("Secret Key for the Bob is : %lld\n", kb);
+    printf("Секретный ключ для Алисы: ", ka);
+    printf("Секретный ключ дял Боба: ", kb);
 
 	cout << "Анна: ";
 	string mes;
@@ -64,9 +64,9 @@ int main()
 	cout << "Боб: ";
 	getline(cin, mes);
 	encrypted = magic(mes, ka);
-	cout << endl << "Çàøèôðîâàííî: " << encrypted << endl;
+	cout << endl << "Зашифровано: " << encrypted << endl;
 	dec = magic(encrypted, kb);
-	cout << "Ðàñøèôðîâàííî: " << dec << endl;
+	cout << "Расшифровано: " << dec << endl;
 
 	system("pause");
     return 0;
